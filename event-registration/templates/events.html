@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>📅 Events</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h2>📅 Upcoming Events</h2>
+
+  <form method="POST">
+    <input name="name" placeholder="🎤 Event Name" required>
+    <input name="location" placeholder="📍 Location" required>
+    <button type="submit">➕ Add Event</button>
+  </form>
+
+  <ul>
+    {% for event in events %}
+      <li>🎯 {{ event.name }} - {{ event.location }}</li>
+    {% endfor %}
+  </ul>
+
+  <a href="/">🔙 Back</a>
+</body>
+</html>
